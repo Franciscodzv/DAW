@@ -201,6 +201,14 @@ class Cajero
 		return this.saldo;
 
 	}
+
+	depositar = function(deposito)
+	{
+		this.saldo += parseInt(deposito); 
+		return this.saldo; 
+	}
+
+
 }
 
 atm = new Cajero(10000); 
@@ -209,22 +217,22 @@ function cajero()
 {
 	
  
-	decision = prompt("Actualmente tienes $" + atm.saldo + " pesos.\n ¿Deseas retirar dinero? \nSi = 1\nNo = 0"); 
+	decision = prompt("Actualmente tienes $" + atm.saldo + " pesos.\nRetirar = 1 \nDepositar = 2\nSalir = 0"); 
 
 	table5 = ""; 
 
-	while(isNaN(decision) || decision != 1 && decision!= 0)
+	while(isNaN(decision) || decision != 1 && decision!= 0 && decision!=2)
 	{
-		decision = prompt("Porfavor utiliza las opciones en pantalla.\n Si = 1 \n No = 0"); 
+		decision = prompt("Porfavor utiliza las opciones en pantalla.\nRetirar = 1 \nDepositar = 2\nSalir = 0"); 
 	}
 
 	while(decision == 1)
 	{
 		decision2 = prompt("Cuanto dinero deseas retirar? Saldo: $" + atm.saldo); 
 
-		while(isNaN(decision2) && decision2 != 1 && decision2 != 0)
+		while(isNaN(decision2))
 		{
-			decision2 = prompt("Porfavor utiliza las opciones en pantalla.\n Si = 1 \n No = 0"); 
+			decision2 = prompt("Porfavor introduce una cantidad válida."); 
 		}
 
 		while(decision2 > atm.saldo)
@@ -234,7 +242,20 @@ function cajero()
 
 		atm.retirar(decision2);  
 
-		decision = prompt("Deseas hacer otro retriro?\n Si = 1\n No = 0"); 
+		decision = prompt("Deseas hacer otra transacción?\nRetirar = 1 \nDepositar = 2\nSalir = 0"); 
+	}
+
+	while(decision == 2)
+	{
+		decision2 = prompt("Cuanto dinero deseas depositar? Saldo: $" + atm.saldo); 
+
+		while(isNaN(decision2))
+		{
+			decision2 = prompt("Porfavor introduce una cantidad válida."); 
+		}
+
+		atm.depositar(decision2); 
+		decision = prompt("Deseas hacer otra transacción?\nRetirar = 1 \nDepositar = 2\nSalir = 0");
 	}
 
 	if (decision == 0)
