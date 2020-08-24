@@ -8,5 +8,10 @@ td
 	padding: 0.5em;
 	border-style: solid; 
 	border-width: 2px; 
-	border-color: black; 
+	border-color: white; 
+}
+
+.blanco
+{
+	color: white; 
 }
