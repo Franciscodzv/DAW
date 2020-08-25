@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laboratorio 5</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Lab5.css">
+</head>
+<body>
+	<section>
+		<article>
+			<h3>Validar passwords</h3>
+			<div class="container">
+				<form id="passwords" action="">
+					<label for="psw">Password</label>
+					<br>
+					<input type="password" id="psw" name="psw" requiered>
+					<span id="error" class="error"></span>
+					<span id="correct" class="correct"></span>
+					<br><br>
+					<input type="button" id="valid" value="Validar password" class="validar">
+					<br><br>
+					<label for="checkpsw">Check password</label>
+					<br>
+					<input disabled type="password" id ="checkpsw" name="checkpsw" required>
+					<span id="match" class="correct"></span>
+					<span id="noMatch" class="error"></span>
+					<br><br>
+					<input type="button" id="submit" value="Submit" disabled>
+				</form>
+			</div>
+		</article>
+	</section>
+	<hr>
+
+	<section>
+		<article>
+			<h3>Tienda online</h3>
+			<div class="items">
+				<table>
+					<tr>
+						<td>
+							<p>
+								<img src="Switch.png" width="200" height="130" title="Nintendo Switch">
+								<br>
+								<input type="number" id="switch" min="0" max="99" placeholder="Qty">
+								<span id="buySwitch"></span>
+								<hr>
+							</p>
+							<br>
+							<p>
+								<img src="alien.png" width="220" height="150"  title="Alienware Laptop">
+								<br>
+								<input type="number" id="alien" min="0" max="99" placeholder="Qty">
+								<span id="buyAlien"></span>
+								<hr>
+							</p>
+							<br>
+							<br>
+							<p>
+								<img src="pc.png" width="220" height="170" title="Gaming Deskop PC">
+								<br>
+								<input type="number" id="pc" min="0" max="99" placeholder="Qty">
+								<span id="buyPC"></span>
+								<hr>
+							</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</article>
+	</section>
+
+	<script type = "text/javascript" src = "Laboratorio5.js"></script>
+</body>
+</html>

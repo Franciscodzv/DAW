@@ -1,0 +1,32 @@
+.container
+{
+	background-color: #f1f1f1;
+	padding:20px;
+}
+
+.items
+{
+	background-color: #A9A9A9; 
+	padding: 20px; 
+}
+
+.error
+{
+
+	font-size: 8px; 
+	color: red; 
+}
+
+.correct
+{
+	font-size: 8px; 
+	color:green;
+}
+
+.validar
+{
+	font-size:9px;
+}
+
+
+
