@@ -38,30 +38,67 @@
 			<div class="items">
 				<table>
 					<tr>
+						<input type="button" value="💰 Buy 💰 " class="buyButton" id="buy">
+						<span id="final"></span>
+					</tr>
+					<tr>
 						<td>
 							<p>
+								<hr>
 								<img src="Switch.png" width="200" height="130" title="Nintendo Switch">
+								
 								<br>
-								<input type="number" id="switch" min="0" max="99" placeholder="Qty">
+								<input type="number" id="switch" min="0" max="10" placeholder="Qty" required="">
 								<span id="buySwitch"></span>
-								<hr>
-							</p>
-							<br>
-							<p>
-								<img src="alien.png" width="220" height="150"  title="Alienware Laptop">
 								<br>
-								<input type="number" id="alien" min="0" max="99" placeholder="Qty">
+								<hr>
+								<span id="switchLimit" class="limits"></span>
+							</p>
+						</td>
+						<td>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</td>
+						<td>
+							<p> 
+								<hr>
+									
+								<img src="alien.png" width="200" height="130"  title="Alienware Laptop">
+									
+								<br>
+					
+								<input type="number" id="alien" min="0" max="5" placeholder="Qty">
 								<span id="buyAlien"></span>
+								
 								<hr>
-							</p>
-							<br>
-							<br>
+								<span id="alienLimit" class="limits"></span>
+							</p>	
+						</td>
+						<td>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								
+						</td>
+						<td>
 							<p>
-								<img src="pc.png" width="220" height="170" title="Gaming Deskop PC">
-								<br>
-								<input type="number" id="pc" min="0" max="99" placeholder="Qty">
+								<hr> 
+								<img src="pc.png" width="200" height="130" title="Gaming Deskop PC">
+									
+								<br> 
+								<input type="number" id="pc" min="0" max="2" placeholder="Qty">
 								<span id="buyPC"></span>
 								<hr>
+								<span id="PClimit" class="limits"></span>
 							</p>
 						</td>
 					</tr>

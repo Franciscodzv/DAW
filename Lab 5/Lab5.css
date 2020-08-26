@@ -28,5 +28,17 @@
 	font-size:9px;
 }
 
+.limits
+{
+	font-size: 11px; 
+	color:red;
+}
+
+.buyButton
+{
+	font-size: 20px;
+	color:black;
+	width: 105px; 
+}
 
 

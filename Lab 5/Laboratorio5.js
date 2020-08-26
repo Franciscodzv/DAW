@@ -88,12 +88,102 @@ submit.addEventListener("click",function(){
 
 let Nswitch = 299; 
 let alienware = 1999; 
-let PC = 3000; 
+let PC = 2999; 
 
 let numberSwitch = document.getElementById("switch");
 let spanSwitch = document.getElementById("buySwitch"); 
+let switchLimit = document.getElementById("switchLimit"); 
 
-spanSwitch.innerText = "$" + Nswitch; 
+let numberAlien = document.getElementById("alien"); 
+let spanAlien = document.getElementById("buyAlien");
+let alienLimit = document.getElementById("alienLimit");  
+
+
+let numberPC = document.getElementById("pc"); 
+let spanPC = document.getElementById("buyPC");
+let PClimit = document.getElementById("PClimit");  
+
+let buyButton = document.getElementById("buy"); 
+let spanFinal = document.getElementById("final"); 
+
+let Sprice = 0; 
+let Aprice = 0; 
+let Pprice = 0; 
+let Fprice = 0; 
+let items = 0; 
+let tax = 0; 
+let total = 0; 
+
+
+
+numberSwitch.addEventListener("click",function(){
+
+	Nswitch = 299;
+
+	if(numberSwitch.value < 11)
+	{
+			Nswitch = Nswitch * numberSwitch.value ;
+			spanSwitch.innerText = "$" + Nswitch + " usd"; 
+			Sprice = Nswitch; 
+			
+	}
+
+	if(numberSwitch.value >= 10)
+	{
+		switchLimit.innerText = "Solo puedes comprar un máximo de 10 Nintendo Switch!";
+	}
+})
+
+numberAlien.addEventListener("click",function(){
+
+	alienware = 1999; 
+
+	if(numberAlien.value < 6 )
+	{
+		alienware = alienware * numberAlien.value;
+		spanAlien.innerText = "$" + alienware + " usd";
+		Aprice = alienware;  
+	}
+
+	if(numberAlien.value >= 5)
+	{
+		alienLimit.innerText = "Solo puedes comprar un máximo de 5 laptops!"; 
+	}
+
+
+
+})
+
+numberPC.addEventListener("click",function(){
+
+	PC = 2999; 
+
+	if(numberPC.value < 3)
+	{
+		PC = PC * numberPC.value; 
+		spanPC.innerText = "$" + PC + " usd"; 
+		Pprice = PC; 
+	}
+
+	if(numberPC.value >= 2)
+	{
+		PClimit.innerText = "Solo puedes comprar un máximo de 2 PCs!"; 
+	}
+})
+
+buyButton.addEventListener("click", function(){
+
+	Fprice = Sprice + Aprice + Pprice; 
+	tax = Fprice * 0.16; 
+	items = numberSwitch.value + numberPC.value + numberAlien.value;
+	total = Fprice + tax; 
+
+
+	spanFinal.innerText = "\nTotal items: " + items + "  \nAmount due before taxes: $" + Fprice + "\nTax: $" + tax.toFixed(2) + "\nTOTAL: $" + total.toFixed(2); 
+
+})
+
+
 
 
 
