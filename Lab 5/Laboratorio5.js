@@ -9,7 +9,6 @@ let span = document.getElementById("correct");
 let match = document.getElementById("match"); 
 let noMatch = document.getElementById("noMatch"); 
 
-
 function ValidPassword(p)
 {
 	let caps = /[A-Z]/,
@@ -63,12 +62,11 @@ validar.addEventListener("click", function(){
 
 	}
 
-}); 
+}) 
 
 submit.addEventListener("click",function(){
 
 	pass = password.value; 
-	console.log("pass: " + pass); 
 	if(checkPassword.value == pass)
 	{
 		match.innerText = "✔" + "\nLos passwords son iguales."
@@ -182,6 +180,233 @@ buyButton.addEventListener("click", function(){
 	spanFinal.innerText = "\nTotal items: " + items + "  \nAmount due before taxes: $" + Fprice + "\nTax: $" + tax.toFixed(2) + "\nTOTAL: $" + total.toFixed(2); 
 
 })
+
+/***************************************************************************************************/
+
+let submitInfo = document.getElementById("submitInfo"); 
+
+let fname = document.getElementById("fname"); 
+let firstName = null; 
+let spanNameC = document.getElementById("nameC"); 
+let spanNameE = document.getElementById("nameE"); 
+
+let lname = document.getElementById("lname"); 
+let lastName = null; 
+let spanLNameC = document.getElementById("lnameC"); 
+let spanLNameE = document.getElementById("lnameE"); 
+
+let fnumber = document.getElementById("phone"); 
+let spanPhoneC = document.getElementById("spanPhoneC"); 
+let spanPhoneE = document.getElementById("spanPhoneE"); 
+let number = null; 
+
+let fzip = document.getElementById("zip"); 
+let zip = null; 
+let spanZipC = document.getElementById("zipC"); 
+let spanZipE = document.getElementById("zipE"); 
+
+let fmale = document.getElementById("male"); 
+let ffemale = document.getElementById("female"); 
+let fgender = document.getElementById("otherg"); 
+let spanGenderE = document.getElementById("genderE"); 
+let spanGenderC = document.getElementById("genderC"); 
+
+let fcountry = document.getElementById("country"); 
+let spanCountryC = document.getElementById("countryC"); 
+let spanCountryE = document.getElementById("countryE"); 
+let country = null; 
+
+
+function validName(name)
+{
+	let fnums = /[0-9]/,
+		fsymbols = /[!-/:-@[-`{-~]/,
+		lnums = /[0-9]/,
+		lsymbols = /[!-/:-@[-`{-~]/; 
+		
+
+	if(fnums.test(name))
+	{
+		throw "Your name cannot contain numbers!"
+	}
+	if(fsymbols.test(name))
+	{
+		throw "Your name cannot contain symbols!"
+	}
+	if(name.length <= 0)
+	{
+		throw "Please enter your first name!"
+	}
+
+	return true; 
+}
+
+function validLastName(name2)
+{
+	let lnums = /[0-9]/,
+		lsymbols = /[!-/:-@[-`{-~]/; 
+
+	if(lnums.test(name2))
+	{
+		throw "Your last name cannot contain numbers!"
+	}
+
+	if(lsymbols.test(name2))
+	{
+		throw "Your last name cannot contain symbols!"
+	}
+
+	if(name2.length <= 0)
+	{
+		throw "Please enter your last name!"
+	}
+
+	return true; 
+
+}
+
+function validNumber(num)
+{
+	if(isNaN(num))
+	{
+		throw "Your phone number cannot contain letters or symbols!"
+	}
+	if(num.length <= 0)
+	{
+		throw "Please enter your phone number!"
+	}
+	if(num.length < 10)
+	{
+		throw "Please enter a valid phone number!"
+	}
+	return true; 
+}
+
+function validZip(z)
+{
+	if(isNaN(z))
+	{
+		throw "Your zip code cannot contain letters or symbols!"
+	}
+	if(z.length != 5 && z.length > 0)
+	{
+		throw "Please enter a valid zip code!"
+	}
+	if(z.length <= 0)
+	{
+		throw "Please enter your zip code!" 
+	}
+	return true; 
+
+}
+
+function genders (fmale,ffemale,fgender)
+{
+	if(fmale.checked==true && ffemale.checked==true || fmale.checked==true && fgender.checked==true || ffemale.checked==true && fgender.checked==true)
+	{
+		throw "Please only select one gender!"
+	}
+	if(fmale.checked==false && ffemale.checked==false && fgender.checked==false)
+	{
+		throw "Please select your gender!"
+	}
+	return true; 
+}
+
+function countries (c)
+{
+	if(c.length == 0)
+	{
+		throw "Please select your country of residence!"
+	}
+}
+
+function checarCampos()
+{
+	firstName = fname.value; 
+	lastName = lname.value; 
+	number = fnumber.value; 
+	zip = fzip.value; 
+	country = fcountry.value; 
+
+
+	try
+	{
+		validName(firstName); 
+		spanNameC.innerText = "✔"; 
+		spanNameE.innerText = "";
+	}
+	catch(e)
+	{
+		spanNameE.innerText = "❌ " + e; 
+		spanNameC.innerText = ""; 
+	}
+
+	try 
+	{
+		validLastName(lastName); 
+		spanLNameC.innerText = "✔"; 
+		spanLNameE.innerText = ""; 
+	}
+	catch(e)
+	{
+		spanLNameE.innerText = "❌ " + e; 
+		spanLNameC.innerText = ""; 
+	}
+
+	try
+	{
+		validNumber(number); 
+		spanPhoneC.innerText = "✔"
+		spanPhoneE.innerText = ""; 
+	}
+	catch(e)
+	{
+		spanPhoneE.innerText = "❌ " + e; 
+		spanPhoneC.innerText = "";  
+	}
+
+	try
+	{
+		validZip(zip);   
+		spanZipC.innerText = "✔"; 
+		spanZipE.innerText = ""; 
+	}
+	catch(e)
+	{
+		spanZipE.innerText = "❌ " + e; 
+		spanZipC.innerText = ""; 
+	}
+
+	try
+	{
+		genders(fmale,ffemale,fgender); 
+		spanGenderE.innerText = ""
+		spanGenderC.innerText = "✔"
+	}
+	catch(e)
+	{
+		spanGenderE.innerText = "❌ " + e
+		spanGenderC.innerText = ""; 
+	}
+
+	try
+	{
+		countries(country); 
+		spanCountryC.innerText = "✔"; 
+		spanCountryE.innerText = ""; 
+
+	}
+	catch(e)
+	{
+		spanCountryE.innerText = "❌ " + e; 
+		spanCountryC.innerText = ""; 
+	}
+
+
+}
+
+submitInfo.addEventListener("click",checarCampos); //submit button action
 
 
 

@@ -8,7 +8,7 @@
 <body>
 	<section>
 		<article>
-			<h3>Validar passwords</h3>
+			<h2>Validar passwords</h2>
 			<div class="container">
 				<form id="passwords" action="">
 					<label for="psw">Password</label>
@@ -17,7 +17,7 @@
 					<span id="error" class="error"></span>
 					<span id="correct" class="correct"></span>
 					<br><br>
-					<input type="button" id="valid" value="Validar password" class="validar">
+					<input type="button" id="valid" value="Validate password" class="validar">
 					<br><br>
 					<label for="checkpsw">Check password</label>
 					<br>
@@ -34,7 +34,7 @@
 
 	<section>
 		<article>
-			<h3>Tienda online</h3>
+			<h2>Tienda online</h2>
 			<div class="items">
 				<table>
 					<tr>
@@ -105,6 +105,81 @@
 				</table>
 			</div>
 		</article>
+	</section>
+
+	<section>
+		<h2>Contact Form</h2>
+		<div class="contact">
+			<form action="">
+				<label for="fname">
+					First Name
+				</label>
+				<input type="text" id="fname" name="firstname" placeholder="Enter your first name..">
+				<span id="nameC" class="correct"></span>
+				<span id="nameE" class="error"></span>
+				<br><br>
+				<label for="lname">
+					Last Name
+				</label>
+				<input type="text" id="lname" name="lastname" placeholder="Enter your last name..">
+				<span id="lnameC" class="correct"></span>
+				<span id="lnameE" class="error"></span>
+				<br><br>
+
+				<label for="gender" id="gender">Gender:</label>
+				<span id="genderE" class="error"></span>
+				<span id="genderC" class="correct"></span>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="male" id="male">
+				<label for="male">Male</label>
+				
+				
+				<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="female" id="female">
+				<label for="female">Female</label>
+
+				
+				<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="otherg" id="otherg">
+				<label for="otherg">Other</label>
+				<br><br>
+
+				<label for="phone">Tel. number</label>
+				<input type="text" name="phone" id="phone" placeholder="Enter your 10 digit number">
+				<span id="spanPhoneC" class="correct"></span>
+				<span id="spanPhoneE" class="error"></span>
+				
+				<br><br>
+				<label for="country">
+					Country
+				</label>
+				&nbsp;&nbsp;&nbsp;
+				<select id="country" name="country">
+					<option value=""></option>
+					<option value="mexico">Mexico</option>
+					<option value="usa">United States</option>
+					<option value="canada">Canada</option>
+					<option value="other">Other</option>	
+				</select>
+				<span id="countryC" class="correct"></span>
+				<span id="countryE" class="error"></span>
+				<br><br>
+				<label for="zip">Zip Code</label>
+				&nbsp;
+				<input type="text" name="zip" id="zip" placeholder="Enter your 5 digit zip code..">
+				<span id="zipC" class="correct"></span>
+				<span id="zipE" class="error"></span>
+				<br><br>
+				<input type="button" name="submitInfo" id="submitInfo" value="Submit" class="submit">
+
+			</form>
+		</div>
 	</section>
 
 	<script type = "text/javascript" src = "Laboratorio5.js"></script>
