@@ -1,17 +1,38 @@
 //Laboratorio 6
 
-let input = document.getElementById("docum");
+let input = document.getElementById("question");
+let checkHelp = document.getElementById("checkID"); 
+let spanHelp = document.getElementById("help"); 
 
-// When the user clicks on the password field, show the message box
-input.onfocus = function() 
+let numeroRandom = Math.floor(Math.random() * 10); 
+let submit = document.getElementById("button"); 
+
+let spanCorrect = document.getElementById("spanCorrect"); 
+let spanError = document.getElementById("spanError"); 
+
+
+if(checkHelp.checked == true)
 {
-    document.getElementById("help").style.display = "block";
+	spanHelp.innerText = "El número que estoy pensando es: " + numeroRandom; 
+}
+else if(checkHelp.checked == false)
+{
+	spanHelp.innerText = ""; 
+}
+
+function checar()
+{
+	if(input.value == numeroRandom)
+		{
+			spanCorrect.innerText = "✔";
+		}
+	if(input.value == numeroRandom)
+		{
+			spanError.innerText = "❌";
+		}
 }
 
 
-// When the user clicks outside of the password field, hide the message box
-input.onblur = function()
-{
-    document.getElementById("help").style.display = "none";
-}
+button.addEventListener("click",checar);
+
 

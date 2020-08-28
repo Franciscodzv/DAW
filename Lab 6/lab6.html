@@ -21,12 +21,16 @@
             	<form id="answer">
                 	<label for="question" class="black">Escribe el número en el que estoy pensando, es del 1 al 10:</label>
                 	<input type="text" id="question" name="question" title="Question">
+                	<span id="spanCorrect" class="correct"></span>
+                	<span id="spanError" class="error"></span>
                 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                	<label for="help" class="black">Necesitas ayuda? →</label>
-                	<input type="checkbox" name="help">
-            		<span id="help"></span>
+                	<label for="help" class="black">Ve la respuesta →</label>
+                	<input type="checkbox" name="help" id="checkID">
 
+            		<span id="help"></span>
+            		<br><br>
+            		<input type="button" name="submit" value="*Checar tu respuesta*" id="button" class="black">
             	</form>
         	</div>
 		</article>
