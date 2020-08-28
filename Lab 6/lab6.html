@@ -15,27 +15,95 @@
 			</div>
 		</article>	
 	</section>
+
 	<section>
 		<article>
+			<h2>Ayuda:</h2>
 			<div class="lightCyan">
-            	<form id="answer">
-                	<label for="question" class="black">Escribe el número en el que estoy pensando, es del 1 al 10:</label>
-                	<input type="text" id="question" name="question" title="Question">
-                	<span id="spanCorrect" class="correct"></span>
-                	<span id="spanError" class="error"></span>
-                	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                	<label for="help" class="black">Ve la respuesta →</label>
-                	<input type="checkbox" name="help" id="checkID">
+				<form>
+					<label for="fname" class="black">Introduce tu nombre:</label>
+					<input type="text" name="fname" id="fname" autocomplete="off">
+					<span id="spanNameC" class="correct"></span>
+					<span id="spanNameE" class="error"></span>
+					<span id="fnameMessage">*Tu nombre no puede contener números ni símbolos*</span>
+					<br><br>
+					<label for="tel" class="black">Introduce tu número de teléfono:</label>
+					<input type="text" name="tel" id="tel">
+					<span id="telC" class="correct"></span>
+					<span id="telE" class="error"></span>
+					<span id="telMessage">*Tu número no puede contener letras ni símbolos y debe ser de 10 dígitos*</span>
 
-            		<span id="help"></span>
-            		<br><br>
-            		<input type="button" name="submit" value="*Checar tu respuesta*" id="button" class="black">
-            	</form>
-        	</div>
+				</form>
+				<br>
+				<input type="button" name="button" id="submit" value="Submit" class="black">
+				<hr>
+			</div>
+		</article>
+	</section>
+
+	
+		
+	<section>
+		<article>
+				<div class="slate">
+					<h3 class="whiteColor">setInterval():</h3>
+					<h5 class="whiteColor">Tiempo que llevas viendo mi laboratorio:</h5>
+
+					<p id="clock" class="whiteColor"></p>
+					<p id="min" class="whiteColor"></p>
+					<p id="hr" class="whiteColor"></p>
+					<input type="button" name="time" id="time" value="El timer ha iniciado">
+					<br><br>
+					<input type="button" name="stop" id="stop" value="Has click para detener el timer">
+					<hr>
+				</div>
+		</article>
+		<article>
+			<div class="coral">
+				<h3 class="black">setTimeOut:</h3>
+				<label for="wait" >Has click en el botón y recibe una alerta después de 3 segundos:</label>
+				&nbsp;
+				<input type="button" name="wait" value="Has click aquí" id="wait">
+				<hr>
+			</div>
+		</article>
+	</section>
+
+	<section>
+		<article>
+			<div class="lightBlue">
+				<h3>Drag and drop</h3>
+				<p>Llena el cuadrado de otro color:</p>
+				<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				<br><br>
+				<img src="yellow.jpg" class="squares" draggable="true" ondragstart="drag(event)" width="336" height="69" id="drag1">
+			</div>
+		</article>
+	</section>
+	<section>
+		<article>
+			<h3>¿Cuáles son las diferencias entre los posibles valores de la propiedad position?</h3>
+			<p>Los elementos sticky son movidos junto con el scroll del usuario. Los elementos estáticos no son afectados por left o right. Los elementos relativos al contrario sí son afectados por left, right, bottom y top. Los elementos fixed son afectados por estas propiedades, sin embargo estos se mueven aunque la página sea navegada. .</p>
+
+			<h3>¿Cuáles son los valores estándar para la propiedad visibility?</h3>
+			<p> Los valores estándar son: visible, hidden y collapse.</p>
+
+			<h3>¿Qué es el zIndex y para qué sirve?</h3>
+			<p>El z-index es una propiedad de css la cual especifíca el orden de un elemento dentro de un stack</p>
+			<p>Referencias: w3schools. (1999-2020). CSS z-index Property. 8/28/2020, de w3schools Sitio web: https://www.w3schools.com/cssref/pr_pos_z-index.asp</p>
+			<p>w3schools. (1999-2020). CSS Tutorial. 8/28/2020, de w3schools Sitio web: https://www.w3schools.com/css/default.asp</p>
+			<p></p>
 		</article>
 	</section>
 	
+	
 	<script type = "text/javascript" src = "Laboratorio 6.js"></script>
+	<footer>Gif obtenido de: https://giphy.com/explore/the-legend-of-zelda</footer>
 </body>
 </html>
+
+
+                
+               
+                
+           
