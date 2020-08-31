@@ -1,0 +1,136 @@
+
+.linkGif
+{
+	position:absolute;
+	top:100px;
+	left:1000px;
+	
+}
+
+.blackB
+{
+	background-color: black;
+	padding: 350px;
+
+}
+
+.lightCyan
+
+{
+	background-color: #E0FFFF;
+	
+}
+
+.black
+{
+	color:black;
+	font-size:20px;
+	font-weight: bold;
+}
+
+
+.blanco
+{
+	color:white;
+	font-size: 30px;
+	position: absolute;
+	left: 1335px;
+	top:70px;
+}
+
+.aqui
+{
+	color:white;
+	position: absolute;
+	left:40px;
+	top:270px;
+	font-size: 25px;
+}
+
+.zelda
+{
+	color:white;
+	font-size:50px;
+	position:absolute;
+	left:300px;
+	top:225px; 
+	font-family: sans-serif;
+
+}
+
+.zelda:hover
+{
+	font-family:serif;
+	color:#FFD700;
+	font-size:75px;
+	background-image: url("link.gif");
+	left:300px;
+	top:225px; 
+	height: 400px;
+	width:670px;
+}
+
+
+
+.correct
+{
+	color:green;
+	font-size: 20px;
+}
+
+.error
+{
+	color:red;
+	font-size: 20px;
+}
+
+.help
+{
+	color:black;
+	font-size: 20px;
+
+}
+
+.slate
+{
+	background-color: #2F4F4F;
+
+}
+
+.whiteColor
+{
+	color:white;
+
+}
+
+.coral
+{
+	background-color: #F08080;
+}
+
+#div1
+{
+	width:350px;
+	height:70px;
+	border:2px solid #008080;
+
+}
+
+.lightBlue
+{
+	background-color: #ADD8E6;
+
+}
+
+.squares
+{
+	width: 350px;
+	height:70px;
+	
+
+}
+
+
+
+
+
