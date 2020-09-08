@@ -123,18 +123,86 @@ function tabla(array $nums)
 	$tabla.= "<td> ".cuadrados($nums)."</td>"; 
 	$tabla.= "<td>".cubos($nums)."</td>"; 
 	$tabla.= "</tr>"; 
-	
+	$tabla.="</table>";
 
 	return $tabla; 
 
 } 
 
+function invert($num,$name)
+{
+	$reverseNumber = strrev($num);
+	$reverseName = strrev($name); 
+
+	$reversedItems = [$reverseNumber, $reverseName];
+
+	$tabla =""; 
+	$tabla.= "<table>";
+	for($i=0; $i<2; $i++)
+	{
+		$tabla.="<tr>"; 
+		$tabla.="<td>".$reversedItems[$i]."<td>"; 
+	}
+	$tabla.="</table>"; 
+
+	return $tabla; 
+
+
+	
+	
+	
+}
+
 ?>
 
 <div class="alert alert-primary"><?= lista($numeros) ?></div>
 
-<div  class="table table-borderless table-dark"><?= tabla($numeros) ?></div>
+<div class="alert alert-success" ><?= tabla($numeros) ?></div>
 
+<div class="alert alert-danger">
+	<h2>Ejercicio Personal</h2>
+	<form class="form-group" action="lab9.php" method="post" >
+		Número que quieres invertir: <input type="text" name="num" placeholder="0">
+		Palabra que quieres invertir: <input type="text" name="nombre" placeholder="...">
+		<input class="btn btn-success" type="submit">
+	</form>
+	
+	<?php 
+	
+		$num = null; 
+		$name = null;
+		 
+		if(isset($_POST["num"]) && isset($_POST["nombre"]))
+		{
+			if(is_numeric($_POST["num"]) && ctype_alpha($_POST["nombre"]))
+			{
+				$num=($_POST["num"]); 
+				$name=($_POST["nombre"]); 
+			}
+			else if(empty($_POST["num"]) || empty($_POST["nombre"]))
+			{
+				echo "Porfavor llena ambos campos.";
+			}
+			else if(!is_numeric($_POST["num"]) || !ctype_alpha($_POST["nombre"]))
+			{
+				echo "En el campo de la izquiera solo acepta números!", "<br>"; 
+				echo "El campo de la derecha solo acepta letras!"; 
+				
+			}
+					
+		}
+		
+		else
+		{
+			$num = null; 
+			$name =null; 
+		}
+
+
+	?>
+
+	<?=invert($num,$name); ?>
+</div>
 
 
 <?php include("_footer.html"); ?>
