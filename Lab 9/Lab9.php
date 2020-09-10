@@ -204,6 +204,30 @@ function invert($num,$name)
 	<?=invert($num,$name); ?>
 </div>
 
+<div class="alert alert-warning">	
+		<h4>Preguntas a responder</h4>
+		<br>
+		<h6>¿Qué hace la función phpinfo()? Describe y discute 3 datos que llamen tu atención:</h6>
+		<p>La función phpinfo() te da un output de información acerca de la configuración de PHP.</p>
+		<p>La función tiene varios parametros como:</p>
+		<P>INFO_GENERAL: Línea de configuración, build date, Web Server, System y más.</P>
+		<p>INFO_CREDITS: Regresa los creditos de PHP.</p>
+		<p>INFO_CONFIGURATION: Regresa los valores locales y maestros de los directivos PHP.</p>
+		<p>INFO_MODULES: Regresa los módulos cargados y sus respectivos ajustes.</p>
+		<p>INFO_ENVIRONMENT: Información de las variables de entorno.</p>
+		<p>INFO_LICENSE: Información sobre la licencia de PHP.</p>
+		<p>INFO_ALL: Muestra todas los datos anteriores ⬆⬆⬆⬆</p>
+		<p>Es interesante que PHP tenga todos estos parametros y que información acerca de PHP este disponible y accesible por medio de esta función y parametros.</p>
+		<br>
+		<h6>¿Qué cambios tendrías que hacer en la configuración del servidor para que pudiera ser apto en un ambiente de producción?</h6>
+		<p>Se deben implementar protocolos de seguridad ya que en un ambiente de producción es muy posible que haya ataques al servidor.</p>
+		<br>
+		<h6>¿Cómo es que si el código está en un archivo con código html que se despliega del lado del cliente, se ejecuta del lado del servidor? Explica.</h6>
+		<p>PHP se ejecuta en el servidor, el lenguaje se traduce y esta traducción es la que se envía al cliente.</p>
+
+
+</div>
+
 
 <?php include("_footer.html"); ?>
 
