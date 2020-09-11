@@ -1,0 +1,60 @@
+<div class="alert alert-primary">
+    <div class="form-group col-md-8">
+        <h5>Please enter your information:</h5>
+        <br>
+        <form class="form-action" action="lab10.php" method="post">
+
+            First name: <input class="form-control" type="text" name="fname" id="fname" placeholder="First name..." value="<?php echo $fname; ?>">
+            <?php 
+                if(!empty($nameError)):
+            ?>
+            <br>
+            <span class="alert alert-danger"> <?= $nameError ?> </span>
+            <?php endif; ?>
+            <br><br> Last name: <input class="form-control" type="text" name="lname" id="lname" placeholder="Last name...">
+            <?php
+                if(!empty($lnameError)):
+            ?>
+                <br>
+                <span class="alert alert-danger"> <?= $lnameError ?></span>
+                <?php endif; ?>
+                <br><br> Phone number: <input class="form-control" type="text" name="phone" id="phone" placeholder="Enter your 10 digit number...">
+                <br><br> Zip Code: <input class="form-control" type="text" name="zip" id="zip" placeholder="Enter your 5 digit Zip Code...">
+
+    </div>
+    &nbsp; &nbsp; Please select your gender:
+    <br><br>
+    <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="form-check-input" type="checkbox" id="male">
+        <label class="form-check-label" for="male">Male</label>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="form-check-input" type="checkbox" id="female">
+        <label class="form-check-label" for="female">Female</label>
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="form-check-input" type="checkbox" id="other">
+        <label class="form-check-label" for="other">Other</label>
+    </div>
+    <br>
+    <div class="form-row col-md-8">
+        <div class="form-group col-md-6">
+            <label for="inputCity">City:</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city of residence...">
+        </div>
+        <div class="form-group col-md-5">
+            <label for="country">Country:</label>
+            <select id="country" class="form-control">
+                <option selected>Choose...</option>
+                <option value="lab9.php">Mexico</option>
+                <option value="lab9.php">United States</option>
+                <option value="lab9.php">Canada</option>
+                <option value="lab9.php">Other</option>
+            </select>
+        </div>
+        <br>
+        <input class="btn btn-success" type="submit" id="submit" value="Submit">
+    </div>
+    </form>
+
+
+</div>
