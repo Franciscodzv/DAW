@@ -4,57 +4,148 @@
         <br>
         <form class="form-action" action="lab10.php" method="post">
 
-            First name: <input class="form-control" type="text" name="fname" id="fname" placeholder="First name..." value="<?php echo $fname; ?>">
+            First name: <input class="form-control" type="text" name="fname" id="fname" placeholder="First name..." value="<?= $fname; ?>">
             <?php 
                 if(!empty($nameError)):
             ?>
             <br>
             <span class="alert alert-danger"> <?= $nameError ?> </span>
             <?php endif; ?>
-            <br><br> Last name: <input class="form-control" type="text" name="lname" id="lname" placeholder="Last name...">
+            <br><br> Last name: <input class="form-control" type="text" name="lname" id="lname" placeholder="Last name..." value="<?= $lname; ?>">
             <?php
                 if(!empty($lnameError)):
             ?>
                 <br>
                 <span class="alert alert-danger"> <?= $lnameError ?></span>
                 <?php endif; ?>
-                <br><br> Phone number: <input class="form-control" type="text" name="phone" id="phone" placeholder="Enter your 10 digit number...">
-                <br><br> Zip Code: <input class="form-control" type="text" name="zip" id="zip" placeholder="Enter your 5 digit Zip Code...">
+                <br><br> Phone number: <input class="form-control" type="text" name="phone" id="phone" placeholder="Enter your 10 digit number..." value="<?= $phone ?>">
+                <?php 
+                    if(!empty($phoneError)): 
+                ?>
+                <br>
+                <span class="alert alert-danger"> <?= $phoneError ?></span>
+                <?php endif; ?>
+                <br><br> Zip Code: <input class="form-control" type="text" name="zip" id="zip" placeholder="Enter your 5 digit Zip Code..." value="<?= $zip ?>">
+                <?php if(!empty($zipError)): ?>
+                <br>
+                <span class="alert alert-danger"> <?= $zipError ?></span>
+                <?php endif; ?>
 
     </div>
     &nbsp; &nbsp; Please select your gender:
     <br><br>
     <div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input class="form-check-input" type="checkbox" id="male">
+        <input class="form-check-input" type="checkbox" id="male" name="male" <?php if(!empty($_POST[ "male"])): ?> checked = "checked"
+        <?php endif; ?>>
         <label class="form-check-label" for="male">Male</label>
         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input class="form-check-input" type="checkbox" id="female">
+        <input class="form-check-input" type="checkbox" id="female" name="female" <?php if(!empty($_POST[ "female"])): ?> checked = "checked"
+        <?php endif; ?>>
         <label class="form-check-label" for="female">Female</label>
         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input class="form-check-input" type="checkbox" id="other">
+        <input class="form-check-input" type="checkbox" id="other" name="other" <?php if(!empty($_POST[ "other"])): ?> checked = "checked"
+        <?php endif; ?>>
         <label class="form-check-label" for="other">Other</label>
+        <?php if(!empty($genderError)): ?>
+        <br><br> &nbsp;&nbsp;
+        <span class="alert alert-danger"><?= $genderError ?></span>
+        <?php endif; ?>
+
+
     </div>
     <br>
     <div class="form-row col-md-8">
         <div class="form-group col-md-6">
             <label for="inputCity">City:</label>
-            <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city of residence...">
+            <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city of residence..." value="<?= $city ?>">
+            <?php if(!empty($cityError)): ?>
+            <br>
+            <span class="alert alert-danger"><?= $cityError ?></span>
+            <?php endif; ?>
         </div>
         <div class="form-group col-md-5">
             <label for="country">Country:</label>
-            <select id="country" class="form-control">
-                <option selected>Choose...</option>
-                <option value="lab9.php">Mexico</option>
-                <option value="lab9.php">United States</option>
-                <option value="lab9.php">Canada</option>
-                <option value="lab9.php">Other</option>
+            <select id="country" class="form-control" name="country">
+                <option selected></option>
+                <option value="Mexico">Mexico</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="Other">Other</option>
+                <?php if(!empty($country)): echo $country?>
+                <option selected><?= $country ?></option>
+                <?php endif ?>
             </select>
+            <?php if(!empty($countryError)): ?>
+            <br>
+            <span class="alert alert-danger"><?=$countryError ?></span>
+            <?php endif; ?>
         </div>
-        <br>
+
+
+    </div>
+    <div>
         <input class="btn btn-success" type="submit" id="submit" value="Submit">
     </div>
     </form>
+    <?php if(empty($nameError) && empty($lnameError) && empty($phoneError) && empty($zipError) && empty($genderError) && empty($cityError) && empty($countryError)): ?>
+    <div class="alert alert-success">
+        <h5>Your information:</h5>
+        <p>
+            First name:
+            <?= $fname ?>
+        </p>
+        <p>
+            Last name:
+            <?= $lname ?>
+        </p>
+        <p>
+            Phone number:
+            <?= $phone ?>
+        </p>
+        <p>
+            Zip Code:
+            <?= $zip ?>
+        </p>
 
+        <p>
+            Gender:
+            <?= $gender ?>
+        </p>
+        <p>
+            City:
+            <?= $city ?>
+        </p>
+        <p>
+            Country:
+            <?= $country ?>
 
+        </p>
+
+    </div>
+
+    <?php endif; ?>
+</div>
+
+<div class="alert alert-dark">
+
+    <h5>Preguntas a responder:</h5>
+    <h6>¿Por qué es una buena práctica separar el controlador de la vista?</h6>
+    <p>Es buena práctica ya que separa los lenguajues que se están utilizando, además de que el código se vuelve más sencillo de leer.</p>
+    <h6>Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?</h6>
+    <p>$_SERVER es un arreglo que contiene información como encabezados, rutas y ubicaciones de scripts.</p>
+    <p>$_FILES es un arreglo de elementos cargados en el script actual mediante el método POST.</p>
+    <p>$_SESSION es un arreglo que contiene variables de sesión disponibles para el script actual.</p>
+    <p>$_COOKIE es un arreglo de variables pasadas al script actual a través de cookies HTTP.</p>
+    <p>$_REQUEST es un arreglo que contiene el contenido de $ _GET, $ _POST y $ _COOKIE.</p>
+    <p>$_ENV es un arreglo de variables que se pasa al script actual a través del método de entorno.</p>
+    <h6>Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.</h6>
+    <p>mail() permite mandar emails directamente desde un script</p>
+    <p>file() lee un archivo y lo convierte en un string</p>
+    <h6>¿Qué es XSS y cómo se puede prevenir?</h6>
+    <p>XSS o Cross-site scripting es un tipo de ataque el cual consiste en insertar código en por ejemplo una forma de llenado en un sitio web. El código puede ser desde mandar una simple alerta a ser código malicioso que dañe la integridad del sitio. Para
+        defenderse de ataques de este tipo existen funciones especiales las cuales convierten esas líneas de código en simples string, por lo tanto no se ejecutan. Las funciones de defensa son: htmlspecialchars(), htmlentities() y strip_tags(). </p>
+    <h6>References:</h6>
+    <p>w3schools. (Copyright 1999-2020). PHP Reference. 9/13/2020, de w3schools Sitio web: https://www.w3schools.com/php/php_ref_overview.asp</p>
+    <p>w3schools. (Copyright © 2001-2020). Superglobals. 9/13/2020, de The PHP Group Sitio web: https://www.php.net/manual/en/language.variables.superglobals.php</p>
 </div>
