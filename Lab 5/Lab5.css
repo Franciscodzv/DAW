@@ -1,56 +1,45 @@
-.container
-{
-	background-color: #f1f1f1;
-	padding:20px;
+.container {
+    background-color: #f1f1f1;
+    padding: 20px;
 }
 
-.items
-{
-	background-color: #A9A9A9; 
-	padding: 20px; 
+.items {
+    background-color: #A9A9A9;
+    padding: 20px;
 }
 
-.error
-{
-
-	font-size: 14px; 
-	color: red; 
+.error {
+    font-size: 14px;
+    color: red;
 }
 
-.correct
-{
-	font-size: 14px; 
-	color:green;
+.correct {
+    font-size: 14px;
+    color: green;
 }
 
-.validar
-{
-	font-size:9px;
+.validar {
+    font-size: 9px;
 }
 
-.limits
-{
-	font-size: 11px; 
-	color:red;
+.limits {
+    font-size: 11px;
+    color: red;
 }
 
-.buyButton
-{
-	font-size: 20px;
-	color:black;
-	width: 105px; 
+.buyButton {
+    font-size: 20px;
+    color: black;
+    width: 105px;
 }
 
-.contact
-{
-	background-color: #F0F8FF; 
-	padding:20px;
+.contact {
+    background-color: #F0F8FF;
+    padding: 20px;
 }
 
-.submit
-{
-	height: 30px; 
-	width: 100px; 
-	font-size: 20px; 
+.submit {
+    height: 30px;
+    width: 100px;
+    font-size: 20px;
 }
-

@@ -1,0 +1,12 @@
+SET DATEFORMAT dmy
+
+BULK INSERT a1204695.a1204695.[Entregan] /* BULK ES VARIOS DATOS */
+FROM 'e:\wwwroot\rcortese\entregan.csv'
+WITH 
+(
+	CODEPAGE='ACP',
+	FIELDTERMINATOR=',',
+	ROWTERMINATOR='\n'
+)
+
+SELECT *FROM Entregan

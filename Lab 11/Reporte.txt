@@ -1,0 +1,29 @@
+Francisco A. Díaz Vergara | A01204695
+
+Laboratorio 11 
+
+*Ejecuta la instrucción sp_help Materiales
+
+1. ¿Que muestra la instrucción?
+
+La instrucción sp_help Materiales me devuelve información acerca de algún objeto de la base de datos, en este caso de la tabla Materiales. Me devuelve información como dueño del objeto, typo del objeto (en este caso tabla), la fecha y hora en la que se creó el objeto, al igual que las columnas incluyendo su tipo, tamaño precisión, etc. 
+
+*Ejecuta las instrucciones que contiene el archivo crear.sql
+
+2. ¿Qué efecto tuvo esta acción?
+
+Al ejecutar las instrucciones del archivo crear.sql se crearon todas las tablas de un instante.
+
+3. ¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+
+La utilidad de esto es que no necesito crear 4 archivos para crear 4 tablas. Simplemente puedo tener un archivo dedicado a crear tablas, escribo todas las tablas que quiero crear y listo es mucho más rápido de esta manera, de igual manera puedes agregar que se cree otra tabla después ya que las otras tablas no se pueden crear dos vecesn debido a que ya existen tablas con ese mismo nombre. 
+
+4. ¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
+
+Los datos del archivo materiales.csv están ordenados por clave, descripción y costo. Al llenar la tabla Materiales con los datos de materiales.csv cada campo se encontrará ordenado en mi tabla. 
+
+*Ejecuta los comandos definidos en el archivo materiales.sql. Después de la ejecución del comando, vuelve a revisar el contenido de la tabla materiales mediante el uso de una consulta.
+
+5. ¿Qué sucedió?
+
+Después de ejecutar el comando SELECT*FROM Materiales se desplegó la tabla materiales con todos los datos ya cargados, aparece la clave, descripción y costo de todos los materiales ordenados por columnas y filas. 
