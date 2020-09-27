@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Main</title>
+</head>
+
+<body>
+    <div class="container alert-primary">
+        <br>
+        <h5>Create your profile</h5>
+        <br>
+        <form class="form-action" action="Index.php" method="post" enctype="multipart/form-data">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" class="form-control" placeholder="Input your first name...">
+            <br>
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="lname" class="form-control" placeholder="Input your last name...">
+            <br>
+            <h5>Upload a profile picture:</h5>
+            <br>
+            <input type="file" name="FileToUpload" id="FileToUpload" class="btn btn-primary">
+            <br><br>
+            <input type="submit" value="Submit" name="submit" class="btn btn-success">
+            <br><br><br><br>
+            <a href="index2.php"><button class="btn btn-warning" type="button" value="Next page" name="page2">Next page</button></a>
+            <br><br>
+        </form>
+    </div>
+    <br><br>
+    <div class="alert-dark">
+        <h5>¿Por qué es importante hacer un session_unset() y luego un session_destroy()?</h5>
+        <p>Es importante utilizar estas funciones para tener un mejor control sobre la informacion que se utiliza, nos da extra seguridad además de que nos da código más limpio. </p>
+        <h5>¿Cuál es la diferencia entre una variable de sesión y una cookie?</h5>
+        <p>La variable de sesión guarda información la cual se puede utilizar en diferentes páginas y no se guarda en la computadora del usuario, a diferencia de una cookie la cual si se guarda en la computadora del usuario.</p>
+        <h5>¿Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus fotos en el sistema de archivos cuando sube una foto con el mismo nombre?</h5>
+        <p>Facebook asigna un código único a la foto y lo guarda en una variable de sesión. De esta manera el usuario puede subir la misma foto dos veces y facebook simplemente asigna dos códigos distintos a las fotos.</p>
+        <h5>¿Qué es CSRF y cómo puede prevenirse?</h5>
+        <p>Un CSRF es un ataque que utiliza a una víctima a enviar una solicitud maliciosa a un sitio web vulnerable. Esto puede ser realizar una compra, cambiar de contraseña, etc. Este tipo de ataque se puede prevenir al implementar un token anti-CSRF.
+            Un token anti-CSRF es un string random el cual solo lo conoce el navegador del usuario y la aplicación web, este string se guarda en una variable de sesión, cuando el usuario manda alguna solicitud la aplicación web compara ambos strings y
+            si son iguales acepta la solicitud, de otra manera la rechaza.</p>
+        <p>Otra manera es verificando las cookies del usuario. Como cada cookie es unica para cada usuario, la aplicación web checa si la cookie del usuario proviene del mismo sitio y así comprueba que el usario está utilizando su sesión y que la solicitud
+            no proviene de otro sitio.</p>
+    </div>
+
+</body>
+
+</html>
