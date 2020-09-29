@@ -1,0 +1,69 @@
+Francisco A. Díaz Vergara | A01204695
+
+1. Revisa el contenido de la tabla materiales y determina si existe alguna  inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe?
+
+Existe una inconsistencia, hay dos materiales los cuales tienen la misma clave (1000) lo cual no puede ser.
+
+
+2. Agrega nuevamente el registro a la tabla de materiales:INSERT INTO Materiales values(1000, 'xxx', 1000) ¿Qué ocurrió?
+
+No pude agregar el registro ya que estoy violando el constraint de la llave primaria. No se pueden tener dos llaves primarias iguales. 
+
+
+3. Verifica si la tabla de materiales tiene definido algún constraint 		(restricción): sp_helpconstraint materiales ¿Qué información muestra esta consulta?
+
+Me aparece que la tabla materiales tiene un constraint, en este caso es una llave primaria, el nombre del constraint es llaveMateriales. 
+
+
+4. ¿Qué sentencias utilizaste para definir las llaves primarias?
+
+ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC)
+
+ALTER TABLE Proyectos add constraint llaveProyectos PRIMARY KEY (Numero)
+
+
+
+5. ¿Qué sentencias utilizaste para definir este constrait?
+
+ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave, RFC, Numero, Fecha)
+
+
+6. ¿Qué particularidad observas en los valores para clave, rfc y numero?
+Clave y Numero tienen valor 0 y RFC tiene xxx por lo que no cumplen con los formatos de cada columna. 
+
+
+7. ¿Cómo responde el sistema a la inserción de este registro?
+El sistema inserta los valores en la primera fila ya que la clave es 0, el cual es el numero más bajo. 
+
+
+8. ¿Qué significa el mensaje que emite el sistema?
+¿Qué significado tiene la sentencia anterior?
+
+El sistema regresa un error de que el comando INSERT conflictua con una llave foranea. 
+
+La sentencia inserta un nuevo constraint el cual es una llave foranea, en este caso de la tabla materiales. La llave se llama cfentreganclave pero toma una llave foranea como dato. Esto asegura que no haya inconsistencia entre tablas. 
+
+
+9. ¿Qué significan las columnas de esas consultas?
+
+Las columnas muestran los constraints de cada tabla, muestran las llaves primarias y si aplica, las llaves foraneas.
+
+
+10. ¿Qué uso se le está dando a GETDATE()?
+¿Tiene sentido el valor del campo de cantidad?
+
+GETDATE() obtiene la fecha y hora de hoy.
+
+No tiene sentido el valor del campo cantidad porque estoy guardando una entrega con cantidad 0 lo cual no tiene sentido. 
+
+
+11. ¿Cómo responde el sistema? 
+¿Qué significa el mensaje?
+
+El sistema no me deja hacer la inserción ya que contiene el valor 0 en la columna de cantidad. Esto se debe al constraint que hice de que no se aceptan cantidades menores o iguales a 0. 
+
+
+12. Explica el concepto de integridad referencia
+
+Integridad referencial es una propiedad la cual se asegura de que los registros de tablas relacionadas son válidos. Esto se necesita para que no se borren o cambien datos de manera accidental lo cual puede ocurrir cuando se manejan tablas relacionadas entre si. 
+
