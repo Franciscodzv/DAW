@@ -6,6 +6,7 @@
         $username = "root"; 
         $password = ""; 
         $dbname = "dbname"; 
+        
 
         $con = mysqli_connect($servername, $username, $password, $dbname);
         
@@ -28,17 +29,13 @@
 
     function getFruits()
     {
-        $conn =  connectDb(); 
+        $conn = connectDb();
+        $sql = "SELECT Name,Units,Quantity, Price, Country FROM Fruit";
+        $result = mysqli_query($conn, $sql);
 
-        $sql = "SELECT name, units, quantity, price, country, FROM Fruit"; 
+        closeDb($conn);
 
-        $result = mysqli_query($conn,$sql); 
-
-        closeDb($conn); 
-
-        return $result; 
-
-
+        return $result;
     }
 
     //Funcion que regresa los datos de una fruta que tenga en su nombre el parametro
@@ -74,7 +71,7 @@
         
         $conn = connectDb(); 
 
-        $sql = "INSERT INTO Fruit (name, units, quantity, price, country) VALUES (\"". $name . "\",\"" . $units . "\",\"" . $quantity . "\",\"" . $price . "\",\"" . $quantity . "\",\")";
+        $sql = "INSERT INTO Fruit (name, units, quantity, price, country) VALUES (\"". $name . "\",\"" . $units . "\",\"" . $quantity . "\",\"" . $price . "\",\"" . $country . "\")";
 
         if(mysqli_query($conn, $sql))
         {
@@ -92,6 +89,34 @@
         closeDb($conn); 
     }
 
-    
+    function delete_by_name($name)
+        {
+            $conn = connectDb(); 
+
+            $sql = "DELETE FROM Fruit WHERE name = '".$name."'"; 
+
+            $result = mysqli_query($conn, $sql); 
+
+            closeDb($conn); 
+
+            return $result;
+        }
+
+     function update_by_name($name, $units, $quantity, $price, $country)
+     {
+        $conn = connectDb(); 
+
+        $sql = "UPDATE Fruit SET name='$name', units='$units', quantity='$quantity', price='$price', country='$country' WHERE name = '$name'"; 
+
+        $result = mysqli_query($conn, $sql); 
+
+        closeDb($conn); 
+
+        return $result; 
+     }
+
+
+
+
 
 ?>

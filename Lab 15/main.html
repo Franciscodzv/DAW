@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Lab 15</title>
+</head>
+
+<body class="alert-primary">
+    <br>
+    <form action="index.php" method="post" class="from-action col-lg-6 offset-lg-3">
+        <div class="form-group">
+            <label for="fruitName">Fruit Name:</label>
+            <input type="text" name="fruitName" id="fruitName" placeholder="Enter fruit name.." class="form-control centered">
+        </div>
+
+        <div class="form-group">
+            <label for="fruitUnits">Number of Units:</label>
+            <input type="text" name="fruitUnits" class="form-control" placeholder="Enter number of units..">
+        </div>
+
+        <div class="form-group">
+            <label for="fruitQuantity">Quantity:</label>
+            <input type="text" name="fruitQuantity" placeholder="Enter quantity.." class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="fruitPrice">Price: </label>
+            <input type="text" name="fruitPrice" placeholder="Enter price.." class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="fruitCountry">Country of origin:</label>
+            <input type="text" name="fruitCountry" id="fruitCountry" placeholder="Enter exporting country.." class="form-control">
+
+        </div>
+
+        <div>
+            <br>
+            <input type="submit" class="btn btn-success" name="insertFruit" value="Insert fruit"> &nbsp;
+            <input type="submit" name="updateFruit" value="Update fruit" class="btn btn-warning"> &nbsp;
+            <input type="submit" name="deleteFruit" value="Delete fruit" class="btn btn-danger">
+            <br><br>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
