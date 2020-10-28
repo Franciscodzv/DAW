@@ -24,7 +24,7 @@ require_once 'util.php';
             <label for="estado">Consulta en base a Estado</label>
             <?= selection("NombreEstado","Estado")?>
             <br>
-            <input type="submit" class="btn btn-warning" name="consulta" id="consulta" value="Consultar">
+            <input type="submit" class="btn btn-warning" name="consulta" id="Consulta" value="Consulta">
 
         </div>
     </form>
