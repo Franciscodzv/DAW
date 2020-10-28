@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var request;
     request = $.ajax({
-            url: "getZombies.php",
+            url: "GetZombie.php",
             type: "post"
         }
 
@@ -74,7 +74,7 @@ $(document).ready(function() {
         $input.prop("disabled", true);
 
         request = $.ajax({
-            url: "UpdateFruit.php",
+            url: "MandarEstado.php",
             type: "post",
             data: sData
         });
@@ -123,7 +123,7 @@ $(document).ready(function() {
 
         request = $.ajax({
 
-            url: "DeleteFruit.php",
+            url: "",
             type: "post",
             data: sData
 

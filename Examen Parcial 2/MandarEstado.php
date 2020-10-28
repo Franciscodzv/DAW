@@ -1,12 +1,14 @@
 <?php
 
-require_once ('util.php'); 
+require_once 'util.php'; 
 
-$result = getZombies(); 
+    $estado = $_POST["NombreEstado"]; 
+
+    $result = consultar($estado); 
 
 
 
-if(mysqli_num_rows($result) > 0)
+    if(mysqli_num_rows($result) > 0)
     {
             echo "<div class='alert-success'>"; 
             echo "<table class='table'>"; 
@@ -35,6 +37,4 @@ if(mysqli_num_rows($result) > 0)
         }
 
 
-
-    
 ?>

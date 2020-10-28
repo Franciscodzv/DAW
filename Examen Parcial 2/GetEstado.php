@@ -1,12 +1,9 @@
 <?php
 
-require_once ('util.php'); 
+    require_once 'util.php'; 
+    $result = getEstados(); 
 
-$result = getZombies(); 
-
-
-
-if(mysqli_num_rows($result) > 0)
+    if(mysqli_num_rows($result) > 0)
     {
             echo "<div class='alert-success'>"; 
             echo "<table class='table'>"; 
@@ -34,7 +31,4 @@ if(mysqli_num_rows($result) > 0)
             echo "</div>"; 
         }
 
-
-
-    
 ?>
