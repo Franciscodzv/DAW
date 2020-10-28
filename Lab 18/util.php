@@ -73,7 +73,9 @@
         
         $conn = connectDb(); 
 
-        $sql = "INSERT INTO Fruit (name, units, quantity, price, country) VALUES (\"". $name . "\",\"" . $units . "\",\"" . $quantity . "\",\"" . $price . "\",\"" . $country . "\")";
+        //$sql = "INSERT INTO Fruit (name, units, quantity, price, country) VALUES (\"". $name . "\",\"" . $units . "\",\"" . $quantity . "\",\"" . $price . "\",\"" . $country . "\")";
+
+        $sql = "CALL `InsertFruit`('$name', $units, $quantity, $price, '$country')";
 
         if(mysqli_query($conn, $sql))
         {
