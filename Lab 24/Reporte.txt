@@ -1,0 +1,21 @@
+¿Que pasa cuando deseas realizar esta consulta?
+
+	Muestra los 3 materiales que se agregaron exitosamente
+
+¿Que pasa cuando deseas realizar esta consulta?
+
+	Se queda bloquado intentando hacer la consulta, pero como el recurso 
+	esta bloquedo se queda en fila de espera hasta que se libere
+
+SELECT * FROM CLIENTES_BANCA where NoCuenta='001'
+Explica por qué ocurre dicho evento.
+	En la segunda consulta es posible acceder a su contentido porque no se
+	compromente la integridad de los datos
+
+ROLLBACK TRANSACTION PRUEBA2
+Revisa nuevamente el contenido de la tabla clientes_banca desde la ventana que inicializaste como la segunda sesión:
+SELECT * FROM CLIENTES_BANCA
+¿Qué ocurrió y por qué?
+	Despues del rollback el recurso se debloquea y queda libre par acceder
+	desde la otra conexion
+
